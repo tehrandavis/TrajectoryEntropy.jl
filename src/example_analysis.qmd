@@ -1,0 +1,95 @@
+---
+title: "Example of Trajectory Entropy Analysis"
+format: html
+---
+
+
+```{julia}
+using CSV, 
+    DataFrames, 
+    Statistics, 
+    Optimization, 
+    StatsBase, 
+    Plots, 
+    Distances, 
+    Unitful,
+    NaNMath,
+    Optim,
+    GLM,
+    EntropyHub,
+    NumericalIntegration,
+    StatsPlots,
+    Interpolations,
+    TrajectoryEntropy
+```
+
+
+```{julia}
+trajectory_data = CSV.read("example_data/trajectory1.csv", DataFrame)
+```
+
+
+```{julia}
+filter!(row -> row[:active] == 1, trajectory_data)
+```
+
+
+```{julia}
+# keep only positions where y is less than a critical value
+critical_y = -0.1
+filter!(row -> row[:y_pos] < critical_y, trajectory_data)
+
+# reset data to start point 0,0
+x_positions = trajectory_data.x_pos .- trajectory_data.x_pos[1]
+y_positions = trajectory_data.y_pos .- trajectory_data.y_pos[1]
+
+# if last x position is negative, flip all x positions
+if x_positions[end] < 0
+    x_positions = -1 * x_positions
+end
+```
+
+
+```{julia}
+traj_plot = Plots.plot(x_positions, y_positions,
+                       seriestype = :scatter, 
+                       xlabel = "x coordinates", 
+                       ylabel = "y coordinates", 
+                       xguidefont = font(16, halign = :center, valign = :center, color = :black, rotation = 0), 
+                       yguidefont = font(16, halign = :center, valign = :center, color = :black, rotation = 0), 
+                       title = "Trajectory Plot", 
+                       legend = false, 
+                       #xlims = (-.05, .40),
+                       #ylims = (-.05, .40), 
+                       #xticks = -.5:.5:.5,
+                       margin = 5Plots.mm,
+                       tickfont = font(14), # change x-tick label size
+                       ytickfont = font(14),
+                       aspect_ratio = 1 
+                          )
+```
+
+
+```{julia}
+# perform TEA analysis
+
+#-------- TEA Options
+tea_options = Dict(
+    "sa_binsize_min" => 12,
+    "sa_binsize_max" => 20,
+    "sa_binsize_step" => 2,
+    "manual_bin_size" => 12,
+    "verbose" => true,
+    "maxInner" => 25000,
+    "maxOuter" => 50,
+    "maxFunEvals" => 25000,
+    "unique_algorithm" => "julia",
+    "unique_tol" => 0.01,
+    "decompose" => true
+);
+```
+
+
+```{julia}
+tea(x_positions, y_positions, tea_options; binHist = 22, plot = false, verbose = true, decompose = true)
+```
