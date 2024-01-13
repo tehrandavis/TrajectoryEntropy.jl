@@ -1,0 +1,13 @@
+name = "TrajectoryEntropy"
+uuid = "3f9947c3-51f1-45b0-8a9f-d6bbc2eb94da"
+authors = ["Tehran Davis"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
