@@ -67,7 +67,7 @@ function tea(x, y, tea_options; binHist = "sa", plot = false, verbose = false, d
     # setting the bins for the histogram
     xHist = range(0, stop=3.14, length=opt_bin_num+1)
 
-    H_theta = fit(Histogram, theta, xHist).weights
+    H_theta = StatsBase.fit(Histogram, theta, xHist).weights
     push!(H_theta, 0)
 
     # Compute the H_theta0 by getting the unique values of theta
@@ -79,7 +79,7 @@ function tea(x, y, tea_options; binHist = "sa", plot = false, verbose = false, d
         println("Invalid unique algorithm")
     end
         
-    H_theta0 = fit(Histogram, theta_0, xHist).weights
+    H_theta0 = StatsBase.fit(Histogram, theta_0, xHist).weights
     push!(H_theta0, 0)
 
 

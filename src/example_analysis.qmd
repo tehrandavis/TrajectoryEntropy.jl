@@ -3,26 +3,24 @@ title: "Example of Trajectory Entropy Analysis"
 format: html
 ---
 
-
 ```{julia}
 using CSV, 
     DataFrames, 
-    Statistics, 
-    Optimization, 
-    StatsBase, 
+    #Statistics, 
+    #Optimization, 
     Plots, 
     Distances, 
     Unitful,
     NaNMath,
     Optim,
-    GLM,
-    EntropyHub,
-    NumericalIntegration,
+    #GLM,
+    #EntropyHub,
+    #NumericalIntegration,
+    StatsBase,
     StatsPlots,
-    Interpolations,
     TrajectoryEntropy
+    #Interpolations
 ```
-
 
 ```{julia}
 trajectory_data = CSV.read("example_data/trajectory1.csv", DataFrame)
