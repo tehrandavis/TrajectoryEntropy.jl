@@ -19,12 +19,15 @@ jobs:
       matrix:
         version:
           - '1.0'
-          - '1.9'
+          - '1.10'
           - 'nightly'
         os:
           - ubuntu-latest
+          - macos-latest
+          - windows-latest
         arch:
           - x64
+          - x86
     steps:
       - uses: actions/checkout@v3
       - uses: julia-actions/setup-julia@v1
