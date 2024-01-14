@@ -56,7 +56,12 @@ As you can see above there are a number of crucial options that can be set for t
 * `maxOuter`: sets the maximum number of iterations that the optimizer is allowed to perform in the outer loop. In the context of the Fminbox optimizer, this would be the maximum number of iterations for the box constraint process.
 * `maxFunEvals`: sets the maximum number of function evaluations that the optimizer is allowed to perform. This is a stopping criterion for the optimization process. If the optimizer reaches this limit before finding a minimum, it will stop and return the best solution found so far.
 
+## Example
+An example of how to perform this analysis is provided in a Jupyter notebook in the examples folder. This folder includes two example trajectories. This notebook can be viewed directly on GitHub, or downloaded and run locally.
+
 ## A note on personal practices
 
 Although the sensitivity analysis is implemented in this package, I'm not currently 100% confident in its unsupervised use. My own personal practice at the moment is to manually loop though a range of bin sizes and inspect the resulting decomposition for optimal results. This includes verifying that the obtained decomposition is correct (i.e., that the ξ and ζ values are in the correct range given the obtained ψ). When employing entropy decomposion, I would recommend proceeding with caution.
+
+
   
