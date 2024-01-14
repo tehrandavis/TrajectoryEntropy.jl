@@ -24,4 +24,5 @@ include("src/optimization_functions.jl");
 include("src/entropy_decomposition.jl");
 include("src/trajectory_entropy_analysis.jl");
 
+
 #end

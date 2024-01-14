@@ -73,7 +73,7 @@ function tea(x, y, tea_options; binHist = "sa", plot = false, verbose = false, d
     # Compute the H_theta0 by getting the unique values of theta
     if tea_options["unique_algorithm"] == "julia"
         theta_0 = round.(theta, digits=3) |> unique
-    elseif tea_options["unique_algorithm"] == "uniquetol"
+    elseif tea_options["unique_algorithm"] == "matlab"
         theta_0 = uniquetol(theta, value_tolerance)
     else
         println("Invalid unique algorithm")
