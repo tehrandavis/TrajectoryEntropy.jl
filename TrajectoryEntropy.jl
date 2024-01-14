@@ -17,11 +17,11 @@ using CSV,
     #Interpolations
     
     
-include("coord_to_deg.jl");
-include("uniquetol.jl");
-include("bin_optimization.jl");
-include("optimization_functions.jl");
-include("entropy_decomposition.jl");
-include("trajectory_entropy_analysis.jl");
+include("src/coord_to_deg.jl");
+include("src/uniquetol.jl");
+include("src/bin_optimization.jl");
+include("src/optimization_functions.jl");
+include("src/entropy_decomposition.jl");
+include("src/trajectory_entropy_analysis.jl");
 
 #end

@@ -2,7 +2,7 @@
 
 [![Build Status](https://github.com/tehrandavis/TrajectoryEntropy.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/tehrandavis/TrajectoryEntropy.jl/actions/workflows/CI.yml?query=branch%3Amain)
 
-# Trajectory Entropy Analysis
+Note: This package is still under development. Please report any issues you encounter. At the moment base functionality is working, but I'm still working on adding some additional features.
 
 This is a Julia package that implements the trajectory entropy analysis method described in Calcagnì, Lombardi, and Sulpizio (2017): "Analyzing spatial data from mouse tracker methodology: An entropic approach" DOI 10.3758/s13428-016-0839-5. 
 
