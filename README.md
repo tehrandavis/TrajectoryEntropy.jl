@@ -1,6 +1,5 @@
 # TrajectoryEntropy
 
-[![Build Status](https://github.com/tehrandavis/TrajectoryEntropy.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/tehrandavis/TrajectoryEntropy.jl/actions/workflows/CI.yml?query=branch%3Amain)
 
 Note: This package is still under development. Please report any issues you encounter. At the moment base functionality is working, but I'm still working on adding some additional features.
 
