@@ -1,6 +1,10 @@
 function tea(x, y, tea_options; binHist = "sa", plot = false, verbose = false, decompose = true)
     """
+    # TEA: Trajectory Entropy Analysis
+    
+    ```
     tea(x, y, tea_options; binHist = "sa", plot = false, verbose = false, decompose = true)
+    ```
 
     main function for performing trajectory entropy analysis.
 
