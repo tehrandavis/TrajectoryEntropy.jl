@@ -5,6 +5,8 @@ Note: This package is still under development. Please report any issues you enco
 
 This is a Julia package that implements the trajectory entropy analysis method described in Calcagnì, Lombardi, and Sulpizio (2017): "Analyzing spatial data from mouse tracker methodology: An entropic approach" DOI 10.3758/s13428-016-0839-5. 
 
+I've renamed this to Trajectory Entropy Analysis (as opposed to EMoT from the original authors) given you don't need to just do this with mouse trajectories.
+
 The code in this repository is a Julia implementation of the MATLAB code provided by the authors of the paper, which can be found [here](http://polorovereto.unitn.it/~antonio.calcagni/emot.html).
 
 ## Installation
