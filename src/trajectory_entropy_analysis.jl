@@ -94,6 +94,11 @@ function tea(x, y, tea_options; binHist = "sa", plot = false, verbose = false, d
     if plot
       # Plot the histogram of theta
       hist_plot = histogram(theta, bins = opt_bin_num, xlabel = "theta", ylabel = "Frequency", title = "θ Values", legend=false)
+    
+      # add ecdf to histogram plot
+      
+      
+
     else
         hist_plot = 0
     end
