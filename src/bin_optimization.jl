@@ -45,7 +45,7 @@ function sshist(x, min_bins, max_bins)
     C = zeros(length(D), SN)
 
     # Computation of the cost function
-    for i in 1:length(N)
+    for i in eachindex(N)
         shift = range(0, stop=D[i], length=SN)
         
         for p in 1:SN
